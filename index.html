@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منوی دیجیتال دیزی سرا - شاه دیزی پایتخت</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #c1272d; /* رنگ قرمز ایرانی */
+            --secondary-color: #f4e3c9; /* رنگ کرمی */
+            --accent-color: #8b4513; /* رنگ قهوه‌ای */
+            --gold-color: #daa520;
+            --dark-color: #3d2b1f;
+            --light-color: #fffaf0;
+        }
+        
+        body {
+            font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+            background-color: #f9f5eb;
+            color: var(--dark-color);
+            line-height: 1.8;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23c1272d' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* هدر و لوگو */
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .header::before, .header::after {
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 40%;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            top: 100%;
+        }
+        
+        .header::before {
+            right: 0;
+        }
+        
+        .header::after {
+            left: 0;
+        }
+        
+        .logo {
+            font-family: 'Amiri', serif;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .logo::before, .logo::after {
+            content: "✻";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-color);
+            font-size: 2rem;
+        }
+        
+        .logo::before {
+            right: -50px;
+        }
+        
+        .logo::after {
+            left: -50px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        /* منو */
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .menu-category {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(193, 39, 45, 0.1);
+            position: relative;
+        }
+        
+        .menu-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .category-header {
+            background: linear-gradient(to right, var(--primary-color), #a02020);
+            color: white;
+            padding: 18px;
+            text-align: center;
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: skewX(-20deg);
+        }
+        
+        .category-icon {
+            margin-left: 10px;
+        }
+        
+        .menu-items {
+            padding: 20px;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed rgba(139, 69, 19, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-item:hover {
+            background-color: rgba(244, 227, 201, 0.3);
+            padding-right: 10px;
+            padding-left: 10px;
+            border-radius: 8px;
+        }
+        
+        .item-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            flex-grow: 1;
+        }
+        
+        .item-price {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            min-width: 100px;
+            text-align: left;
+            direction: ltr;
+        }
+        
+        .item-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        /* تزئینات سنتی */
+        .persian-pattern {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            opacity: 0.05;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23c1272d'/%3E%3C/svg%3E");
+        }
+        
+        .pattern-bottom {
+            bottom: 0;
+            left: 0;
+            right: auto;
+            top: auto;
+            transform: rotate(180deg);
+        }
+        
+        /* فوتر */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--accent-color);
+            border-top: 1px solid rgba(139, 69, 19, 0.2);
+            font-size: 0.9rem;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* رسپانسیو */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .logo::before, .logo::after {
+                font-size: 1.5rem;
+            }
+            
+            .logo::before {
+                right: -35px;
+            }
+            
+            .logo::after {
+                left: -35px;
+            }
+            
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .item-name {
+                font-size: 1.2rem;
+            }
+            
+            .item-price {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* انیمیشن */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .menu-category {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .menu-category:nth-child(1) { animation-delay: 0.1s; }
+        .menu-category:nth-child(2) { animation-delay: 0.2s; }
+        .menu-category:nth-child(3) { animation-delay: 0.3s; }
+        .menu-category:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="persian-pattern"></div>
+    <div class="persian-pattern pattern-bottom"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">شاه دیزی پایتخت</h1>
+            <p class="subtitle">طعمی به قدمت سنت ایران زمین</p>
+        </header>
+        
+        <main>
+            <div class="menu-container">
+                <!-- تمام آیتم‌های منو در یک دسته -->
+                <div class="menu-category">
+                    <div class="category-header">
+                        <i class="fas fa-utensils category-icon"></i>منوی شاه دیزی پایتخت ‌
+                      <i class="fas fa-utensils category-icon"></i>
+                    </div>
+                    <div class="menu-items">
+                        <!-- دیزی‌های ویژه -->
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی زعفرانی</div>
+                            </div>
+                            <div class="item-price">370T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی با آلو</div>
+                            </div>
+                            <div class="item-price">380T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی آجیلی</div>
+                            </div>
+                            <div class="item-price">400T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی خانواده</div>
+                            </div>
+                            <div class="item-price">600T</div>
+                        </div>
+                        
+                        <!-- دیزی‌های کلاسیک -->
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی دورهمی</div>
+                            </div>
+                            <div class="item-price">3.5T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی لیمویی</div>
+                            </div>
+                            <div class="item-price">320T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی اقتصادی</div>
+                            </div>
+                            <div class="item-price">280T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی لپه</div>
+                            </div>
+                            <div class="item-price">300T</div>
+                        </div>
+                        
+                        <!-- دیزی‌های خاص -->
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی تند</div>
+                            </div>
+                            <div class="item-price">310T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی دارچینی</div>
+                            </div>
+                            <div class="item-price">330T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی بز باشی</div>
+                            </div>
+                            <div class="item-price">340T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی اناری</div>
+                            </div>
+                            <div class="item-price">360T</div>
+                        </div>
+                        
+                        <!-- پیش‌غذاها و سایر -->
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">میکس پاچه سیرابی</div>
+                            </div>
+                            <div class="item-price">200T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">پاچه گوسفندی</div>
+                            </div>
+                            <div class="item-price">150T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">سیرابی سفالی</div>
+                            </div>
+                            <div class="item-price">160T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">دیزی مخصوص شاه دیزی</div>
+                            </div>
+                            <div class="item-price">450T</div>
+                        </div>
+                        <div class="menu-item">
+                            <div>
+                                <div class="item-name">ماست سنتی سفالی</div>
+                            </div>
+                            <div class="item-price">40T</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+       
+    </div>
+
+    <script>
+        // افزودن انیمیشن هنگام بارگذاری صفحه
+        document.addEventListener('DOMContentLoaded', function() {
+            // تأخیر در نمایش آیتم‌ها برای جلوه بصری بهتر
+            const menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.05}s`;
+                item.style.animation = 'fadeIn 0.5s ease forwards';
+                item.style.opacity = '0';
+            });
+            
+            // افزودن رویداد کلیک برای آیتم‌های منو
+            menuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.backgroundColor = '#f4e3c9';
+                    setTimeout(() => {
+                        this.style.backgroundColor = '';
+                    }, 300);
+                    
+                    // نمایش نام و قیمت آیتم انتخاب شده
+                    const itemName = this.querySelector('.item-name').textContent;
+                    const itemPrice = this.querySelector('.item-price').textContent;
+                    alert(`آیتم "${itemName}" به مبلغ ${itemPrice} به سبد خرید اضافه شد.`);
+                });
+            });
+            
+            // تغییر رنگ هدر هنگام اسکرول
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
